@@ -5,11 +5,12 @@ LN ?= ln -sf
 TEST_IMG_NAME ?= wasmtest:latest
 RUNTIMES ?= wasmedge wasmtime wasmer
 CONTAINERD_NAMESPACE ?= default
+RUSTC ?= rustc
 
 # We have a bit of fancy logic here to determine the target 
 # since we support building for gnu and musl
 # TARGET must evenutually match one of the values in the cross.toml
-HOST_TARGET = $(shell rustc --version -v | sed -En 's/host: (.*)/\1/p')
+HOST_TARGET = $(shell $(RUSTC) --version -v | sed -En 's/host: (.*)/\1/p')
 
 # if TARGET is not set and we are using cross
 # default to musl to facilitate easier use shim on other distros becuase of the static build
@@ -133,7 +134,7 @@ test-oci-tar-builder:
 .PHONY: install install-%
 install: $(RUNTIMES:%=install-%);
 
-install-%: build-%
+install-%:
 	mkdir -p $(PREFIX)/bin
 	$(INSTALL) $(TARGET_DIR)/$(TARGET)/$(OPT_PROFILE)/containerd-shim-$*-v1 $(PREFIX)/bin/
 	$(LN) ./containerd-shim-$*-v1 $(PREFIX)/bin/containerd-shim-$*d-v1
@@ -150,10 +151,10 @@ dist/clean:
 	rm -rf dist
 
 .PHONY: install/all
-install/all: test-image/clean build install test-image load
+install/all: test-image/clean install test-image load
 
 .PHONY: install/oci/all
-install/oci/all: test-image/oci/clean build install test-image/oci load/oci
+install/oci/all: test-image/oci/clean install test-image/oci load/oci
 
 .PHONY: test-image
 test-image: dist/img.tar
@@ -313,6 +314,10 @@ test/k3s-oci-%: dist/img-oci.tar bin/k3s dist-%
 
 .PHONY: test/k3s/clean
 test/k3s/clean: bin/k3s/clean;
+
+.PHONY: bench
+bench:
+	$(CARGO) bench -p containerd-shim-benchmarks
 
 .PHONY: clean
 clean:

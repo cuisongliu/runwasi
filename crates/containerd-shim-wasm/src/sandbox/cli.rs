@@ -36,6 +36,7 @@ macro_rules! revision {
     };
 }
 
+#[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
 pub fn shim_main<'a, I>(
     name: &str,
     version: &str,

@@ -34,6 +34,7 @@ pub struct Instance<E: Engine> {
 impl<E: Engine> SandboxInstance for Instance<E> {
     type Engine = E;
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     fn new(id: String, cfg: Option<&InstanceConfig<Self::Engine>>) -> Result<Self, SandboxError> {
         let cfg = cfg.context("missing configuration")?;
         let engine = cfg.get_engine();
@@ -69,6 +70,7 @@ impl<E: Engine> SandboxInstance for Instance<E> {
     /// Start the instance
     /// The returned value should be a unique ID (such as a PID) for the instance.
     /// Nothing internally should be using this ID, but it is returned to containerd where a user may want to use it.
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     fn start(&self) -> Result<u32, SandboxError> {
         log::info!("starting instance: {}", self.id);
         // make sure we have an exit code by the time we finish (even if there's a panic)
@@ -105,6 +107,7 @@ impl<E: Engine> SandboxInstance for Instance<E> {
     }
 
     /// Send a signal to the instance
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     fn kill(&self, signal: u32) -> Result<(), SandboxError> {
         log::info!("sending signal {signal} to instance: {}", self.id);
         let signal = Signal::try_from(signal as i32).map_err(|err| {
@@ -121,6 +124,7 @@ impl<E: Engine> SandboxInstance for Instance<E> {
 
     /// Delete any reference to the instance
     /// This is called after the instance has exited.
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     fn delete(&self) -> Result<(), SandboxError> {
         log::info!("deleting instance: {}", self.id);
         match instance_exists(&self.rootdir, &self.id) {
@@ -146,6 +150,7 @@ impl<E: Engine> SandboxInstance for Instance<E> {
     /// Waits for the instance to finish and retunrs its exit code
     /// Returns None if the timeout is reached before the instance has finished.
     /// This is a blocking call.
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     fn wait_timeout(&self, t: impl Into<Option<Duration>>) -> Option<(u32, DateTime<Utc>)> {
         self.exit_code.wait_timeout(t).copied()
     }

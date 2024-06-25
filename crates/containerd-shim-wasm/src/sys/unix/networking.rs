@@ -6,6 +6,7 @@ use containerd_shim::{self as shim};
 use nix::sched::{setns, unshare, CloneFlags};
 use oci_spec::runtime;
 
+#[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
 pub fn setup_namespaces(spec: &runtime::Spec) -> Result<()> {
     let namespaces = spec
         .linux()

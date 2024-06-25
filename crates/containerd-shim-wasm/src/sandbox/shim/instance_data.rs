@@ -16,6 +16,7 @@ pub(super) struct InstanceData<T: Instance> {
 }
 
 impl<T: Instance> InstanceData<T> {
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn new_instance(id: impl AsRef<str>, cfg: InstanceConfig<T::Engine>) -> Result<Self> {
         let id = id.as_ref().to_string();
         let instance = InstanceOption::Instance(T::new(id, Some(&cfg))?);
@@ -27,6 +28,7 @@ impl<T: Instance> InstanceData<T> {
         })
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn new_base(id: impl AsRef<str>, cfg: InstanceConfig<T::Engine>) -> Result<Self> {
         let id = id.as_ref().to_string();
         let instance = InstanceOption::Nop(Nop::new(id, None)?);
@@ -38,14 +40,17 @@ impl<T: Instance> InstanceData<T> {
         })
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn pid(&self) -> Option<u32> {
         self.pid.get().copied()
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn config(&self) -> &InstanceConfig<T::Engine> {
         &self.cfg
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn start(&self) -> Result<u32> {
         let mut s = self.state.write().unwrap();
         s.start()?;
@@ -65,6 +70,7 @@ impl<T: Instance> InstanceData<T> {
         res
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn kill(&self, signal: u32) -> Result<()> {
         let mut s = self.state.write().unwrap();
         s.kill()?;
@@ -72,6 +78,7 @@ impl<T: Instance> InstanceData<T> {
         self.instance.kill(signal)
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn delete(&self) -> Result<()> {
         let mut s = self.state.write().unwrap();
         s.delete()?;
@@ -86,6 +93,7 @@ impl<T: Instance> InstanceData<T> {
         res
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn wait(&self) -> (u32, DateTime<Utc>) {
         let res = self.instance.wait();
         let mut s = self.state.write().unwrap();
@@ -93,6 +101,7 @@ impl<T: Instance> InstanceData<T> {
         res
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn wait_timeout(&self, t: impl Into<Option<Duration>>) -> Option<(u32, DateTime<Utc>)> {
         let res = self.instance.wait_timeout(t);
         if res.is_some() {

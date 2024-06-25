@@ -11,6 +11,7 @@ pub(super) enum TaskState {
 }
 
 impl TaskState {
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn start(&mut self) -> Result<()> {
         *self = match self {
             Self::Created => Ok(Self::Starting),
@@ -19,6 +20,7 @@ impl TaskState {
         Ok(())
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn kill(&mut self) -> Result<()> {
         *self = match self {
             Self::Started => Ok(Self::Started),
@@ -27,6 +29,7 @@ impl TaskState {
         Ok(())
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn delete(&mut self) -> Result<()> {
         *self = match self {
             Self::Created | Self::Exited => Ok(Self::Deleting),
@@ -35,6 +38,7 @@ impl TaskState {
         Ok(())
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn started(&mut self) -> Result<()> {
         *self = match self {
             Self::Starting => Ok(Self::Started),
@@ -43,6 +47,7 @@ impl TaskState {
         Ok(())
     }
 
+    #[cfg_attr(feature = "tracing", tracing::instrument(parent = tracing::Span::current(), skip_all, level = "Info"))]
     pub fn stop(&mut self) -> Result<()> {
         *self = match self {
             Self::Started | Self::Starting => Ok(Self::Exited),
