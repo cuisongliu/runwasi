@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1753323030606,
+  "lastUpdate": 1753323084663,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -1114,6 +1114,52 @@ window.BENCHMARK_DATA = {
             "value": 88700614,
             "range": "± 2320508",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jiaxiao Zhou",
+            "username": "Mossaka",
+            "email": "duibao55328@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "860e14c3caebe050804eb7cc5c953aeb32710140",
+          "message": "Merge pull request #1019 from containerd/dependabot/cargo/cargo-f953b882b5\n\nchore(deps): bump the cargo group with 2 updates",
+          "timestamp": "2025-07-22T06:01:36Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/860e14c3caebe050804eb7cc5c953aeb32710140"
+        },
+        "date": 1753323084020,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 15080,
+            "unit": "kB",
+            "extra": "shim: 12100 kB\nzygote: 2980 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 65696,
+            "unit": "kB",
+            "extra": "shim: 53152 kB\nzygote: 12544 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 18968,
+            "unit": "kB",
+            "extra": "shim: 15188 kB\nzygote: 3780 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 19768,
+            "unit": "kB",
+            "extra": "shim: 16388 kB\nzygote: 3380 kB"
           }
         ]
       }
