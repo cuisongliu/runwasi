@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758678650585,
+  "lastUpdate": 1758678652314,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -8306,6 +8306,52 @@ window.BENCHMARK_DATA = {
             "value": 91011495,
             "range": "± 1608168",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jiaxiao Zhou",
+            "username": "Mossaka",
+            "email": "duibao55328@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4b53af2ca3df47dedd7b4bb2dddb7503b9e130be",
+          "message": "Merge pull request #1047 from containerd/dependabot/github_actions/github/codeql-action-3.30.3\n\nchore(deps): bump github/codeql-action from 3.29.0 to 3.30.3",
+          "timestamp": "2025-09-15T23:39:00Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/4b53af2ca3df47dedd7b4bb2dddb7503b9e130be"
+        },
+        "date": 1758678651518,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 14344,
+            "unit": "kB",
+            "extra": "shim: 11724 kB\nzygote: 2620 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 66128,
+            "unit": "kB",
+            "extra": "shim: 53688 kB\nzygote: 12440 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 18856,
+            "unit": "kB",
+            "extra": "shim: 15312 kB\nzygote: 3544 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 19424,
+            "unit": "kB",
+            "extra": "shim: 16024 kB\nzygote: 3400 kB"
           }
         ]
       }
