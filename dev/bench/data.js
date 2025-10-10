@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760062444466,
+  "lastUpdate": 1760062571834,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -10138,6 +10138,76 @@ window.BENCHMARK_DATA = {
             "value": 19468,
             "unit": "kB",
             "extra": "shim: 16080 kB\nzygote: 3388 kB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jiaxiao Zhou",
+            "username": "Mossaka",
+            "email": "duibao55328@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4b53af2ca3df47dedd7b4bb2dddb7503b9e130be",
+          "message": "Merge pull request #1047 from containerd/dependabot/github_actions/github/codeql-action-3.30.3\n\nchore(deps): bump github/codeql-action from 3.29.0 to 3.30.3",
+          "timestamp": "2025-09-15T23:39:00Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/4b53af2ca3df47dedd7b4bb2dddb7503b9e130be"
+        },
+        "date": 1760062570711,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-app:latest",
+            "value": 143895066,
+            "range": "± 7026098",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-oci:latest",
+            "value": 82893588,
+            "range": "± 2207215",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-app:latest",
+            "value": 112510912,
+            "range": "± 2501399",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-oci:latest",
+            "value": 123050528,
+            "range": "± 3334799",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-app:latest",
+            "value": 135239159,
+            "range": "± 5911496",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-oci:latest",
+            "value": 135323069,
+            "range": "± 2137568",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-app:latest",
+            "value": 85793726,
+            "range": "± 4037410",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-oci:latest",
+            "value": 87393547,
+            "range": "± 2094443",
+            "unit": "ns/iter"
           }
         ]
       }
