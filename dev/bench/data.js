@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771212899637,
+  "lastUpdate": 1771295495967,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -25172,6 +25172,52 @@ window.BENCHMARK_DATA = {
             "value": 303751378,
             "range": "± 6824927",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jiaxiao Zhou",
+            "username": "Mossaka",
+            "email": "duibao55328@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "5c75842bcd24fee941f5d6c9a3eda4abc9984a10",
+          "message": "Merge pull request #1050 from containerd/dependabot/github_actions/actions/github-script-8\n\nchore(deps): bump actions/github-script from 7 to 8",
+          "timestamp": "2025-10-15T16:48:36Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/5c75842bcd24fee941f5d6c9a3eda4abc9984a10"
+        },
+        "date": 1771295492529,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 15056,
+            "unit": "kB",
+            "extra": "shim: 12256 kB\nzygote: 2800 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 66460,
+            "unit": "kB",
+            "extra": "shim: 53892 kB\nzygote: 12568 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 18864,
+            "unit": "kB",
+            "extra": "shim: 15356 kB\nzygote: 3508 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 19768,
+            "unit": "kB",
+            "extra": "shim: 16296 kB\nzygote: 3472 kB"
           }
         ]
       }
