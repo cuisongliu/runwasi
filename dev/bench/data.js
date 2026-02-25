@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771988012590,
+  "lastUpdate": 1771988107136,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -26170,6 +26170,52 @@ window.BENCHMARK_DATA = {
             "value": 271541998,
             "range": "± 5415068",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]",
+            "email": "49699333+dependabot[bot]@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "42eb5e70dd4a30d478674b7ee2955c4e96fe7531",
+          "message": "chore(deps): bump time from 0.3.41 to 0.3.47 (#1071)\n\n* chore(deps): bump time from 0.3.41 to 0.3.47\n\nBumps [time](https://github.com/time-rs/time) from 0.3.41 to 0.3.47.\n- [Release notes](https://github.com/time-rs/time/releases)\n- [Changelog](https://github.com/time-rs/time/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/time-rs/time/compare/v0.3.41...v0.3.47)\n\n---\nupdated-dependencies:\n- dependency-name: time\n  dependency-version: 0.3.47\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\n* fix: downgrade time to 0.3.45 for rustc 1.85.0 compatibility\n\ntime 0.3.47 requires rustc 1.88.0, but the project's MSRV is 1.85.0.\nDowngrade to 0.3.45 (MSRV 1.83.0) which is the latest compatible version.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\n\n---------\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: Jiaxiao (mossaka) Zhou <duibao55328@gmail.com>\nCo-authored-by: Claude Opus 4.6 <noreply@anthropic.com>",
+          "timestamp": "2026-02-24T23:10:26Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/42eb5e70dd4a30d478674b7ee2955c4e96fe7531"
+        },
+        "date": 1771988102142,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 14796,
+            "unit": "kB",
+            "extra": "shim: 12016 kB\nzygote: 2780 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 66000,
+            "unit": "kB",
+            "extra": "shim: 53436 kB\nzygote: 12564 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 18604,
+            "unit": "kB",
+            "extra": "shim: 15204 kB\nzygote: 3400 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 19656,
+            "unit": "kB",
+            "extra": "shim: 16456 kB\nzygote: 3200 kB"
           }
         ]
       }
