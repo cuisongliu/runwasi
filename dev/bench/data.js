@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1772937259444,
+  "lastUpdate": 1772940690386,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -62198,6 +62198,100 @@ window.BENCHMARK_DATA = {
             "value": 14.406801047314854,
             "unit": "tasks/s",
             "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 1m 9s 411ms 661us 667ns"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]",
+            "email": "49699333+dependabot[bot]@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "cf51126b59adffc18538c839922125e74e512b0d",
+          "message": "chore(deps): bump wasmtime from 33.0.2 to 36.0.6 (#1070)\n\n* chore(deps): bump wasmtime from 33.0.2 to 36.0.6\n\nBumps [wasmtime](https://github.com/bytecodealliance/wasmtime) from 33.0.2 to 36.0.6.\n- [Release notes](https://github.com/bytecodealliance/wasmtime/releases)\n- [Changelog](https://github.com/bytecodealliance/wasmtime/blob/v36.0.6/RELEASES.md)\n- [Commits](https://github.com/bytecodealliance/wasmtime/compare/v33.0.2...v36.0.6)\n\n---\nupdated-dependencies:\n- dependency-name: wasmtime\n  dependency-version: 36.0.6\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\n* fix: update wasmtime-wasi and wasmtime-wasi-http to 36.0.6 and fix API changes\n\nUpdate all wasmtime ecosystem crates to 36.0.6 and adapt to API changes:\n- wasmtime-wasi: WasiView trait now returns WasiCtxView instead of &mut WasiCtx\n- wasmtime-wasi: IoView trait removed, table now part of WasiCtxView\n- wasmtime-wasi: WasiCtx/WasiCtxBuilder moved from p2 module to top-level\n- wasmtime-wasi-http: WasiHttpView now requires table() method\n- Bump rust-toolchain to 1.86.0 (required by wasmtime 36)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\n\n---------\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: Jiaxiao (mossaka) Zhou <duibao55328@gmail.com>\nCo-authored-by: Claude Opus 4.6 <noreply@anthropic.com>",
+          "timestamp": "2026-02-25T00:57:24Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/cf51126b59adffc18538c839922125e74e512b0d"
+        },
+        "date": 1772940686168,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "Stress Test Throughput with containerd service - wamr (app)",
+            "value": 1.9693402591198566,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 8m 27s 784ms 267us 25ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmedge (app)",
+            "value": 2.7291193417876656,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 6m 6s 418ms 567us 590ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmer (app)",
+            "value": 1.9220514925417371,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 8m 40s 277ms 424us 346ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmtime (app)",
+            "value": 3.5494462152357396,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 4m 41s 734ms 90us 154ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wamr (oci)",
+            "value": 1.9293208234754453,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 8m 38s 317ms 113us 376ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmedge (oci)",
+            "value": 2.545772824000466,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 6m 32s 808ms 26us 927ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmer (oci)",
+            "value": 1.8916453539558795,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 8m 48s 640ms 317us 229ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmtime (oci)",
+            "value": 4.315182404316997,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 3m 51s 739ms 914us 169ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wamr (app)",
+            "value": 79.64497927448363,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 12s 555ms 719us 257ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wasmedge (app)",
+            "value": 73.31963404850893,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 13s 638ms 911us 500ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wasmer (app)",
+            "value": 16.041972771971164,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 1m 2s 336ms 472us 840ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wasmtime (app)",
+            "value": 14.834168111148916,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 1m 7s 411ms 936us 585ns"
           }
         ]
       }
