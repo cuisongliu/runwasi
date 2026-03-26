@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1774409887705,
+  "lastUpdate": 1774494083683,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -29464,6 +29464,52 @@ window.BENCHMARK_DATA = {
             "value": 299046359,
             "range": "± 8386461",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]",
+            "email": "49699333+dependabot[bot]@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "d8a20ca148f0680874b6b87542e3cb07476d322f",
+          "message": "chore(deps): bump actions/upload-artifact from 4 to 7 (#1076)\n\nBumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 4 to 7.\n- [Release notes](https://github.com/actions/upload-artifact/releases)\n- [Commits](https://github.com/actions/upload-artifact/compare/v4...v7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/upload-artifact\n  dependency-version: '7'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2026-03-25T23:17:01Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/d8a20ca148f0680874b6b87542e3cb07476d322f"
+        },
+        "date": 1774494072860,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 15116,
+            "unit": "kB",
+            "extra": "shim: 12220 kB\nzygote: 2896 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 66256,
+            "unit": "kB",
+            "extra": "shim: 53528 kB\nzygote: 12728 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 19080,
+            "unit": "kB",
+            "extra": "shim: 15424 kB\nzygote: 3656 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 20432,
+            "unit": "kB",
+            "extra": "shim: 16916 kB\nzygote: 3516 kB"
           }
         ]
       }
