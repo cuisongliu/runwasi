@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1774665327963,
+  "lastUpdate": 1774665378582,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -29742,6 +29742,76 @@ window.BENCHMARK_DATA = {
             "value": 19948,
             "unit": "kB",
             "extra": "shim: 16396 kB\nzygote: 3552 kB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jiaxiao Zhou",
+            "username": "Mossaka",
+            "email": "duibao55328@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "9bb825b7a5dfbd401421374bdfd76edcf720e290",
+          "message": "chore(deps): bump the patch group across 1 directory with 17 updates (#1089)\n\nBump patch dependencies with fixes for MSRV compatibility:\n- Update anyhow, chrono, libc, log, serde_json, thiserror, tracing,\n  cfg-if, futures, tokio-stream, serde_bytes, caps, dbus, tracing-subscriber\n- Skip time (0.3.47 requires rustc 1.88.0) and tokio-util (0.7.18\n  has private API issue with tokio) to maintain rustc 1.86.0 compat\n- Fix clippy warnings: needless_borrows_for_generic_args, unnecessary_cast,\n  bool_assert_comparison\n\nOriginally from dependabot PR #1087.\n\nCo-authored-by: Claude Opus 4.6 (1M context) <noreply@anthropic.com>",
+          "timestamp": "2026-03-26T02:16:01Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/9bb825b7a5dfbd401421374bdfd76edcf720e290"
+        },
+        "date": 1774665369540,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-app:latest",
+            "value": 294196350,
+            "range": "± 5986223",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-oci:latest",
+            "value": 227331245,
+            "range": "± 4644858",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-app:latest",
+            "value": 310412053,
+            "range": "± 4404266",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-oci:latest",
+            "value": 317148509,
+            "range": "± 6545688",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-app:latest",
+            "value": 289607660,
+            "range": "± 8623323",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-oci:latest",
+            "value": 302061526,
+            "range": "± 8531599",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-app:latest",
+            "value": 227431199,
+            "range": "± 8596767",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-oci:latest",
+            "value": 225416659,
+            "range": "± 5423560",
+            "unit": "ns/iter"
           }
         ]
       }
