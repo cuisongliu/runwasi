@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1775793168371,
+  "lastUpdate": 1775875038680,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -31320,6 +31320,52 @@ window.BENCHMARK_DATA = {
             "value": 284289450,
             "range": "± 7050698",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jiaxiao Zhou",
+            "username": "Mossaka",
+            "email": "duibao55328@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "9bb825b7a5dfbd401421374bdfd76edcf720e290",
+          "message": "chore(deps): bump the patch group across 1 directory with 17 updates (#1089)\n\nBump patch dependencies with fixes for MSRV compatibility:\n- Update anyhow, chrono, libc, log, serde_json, thiserror, tracing,\n  cfg-if, futures, tokio-stream, serde_bytes, caps, dbus, tracing-subscriber\n- Skip time (0.3.47 requires rustc 1.88.0) and tokio-util (0.7.18\n  has private API issue with tokio) to maintain rustc 1.86.0 compat\n- Fix clippy warnings: needless_borrows_for_generic_args, unnecessary_cast,\n  bool_assert_comparison\n\nOriginally from dependabot PR #1087.\n\nCo-authored-by: Claude Opus 4.6 (1M context) <noreply@anthropic.com>",
+          "timestamp": "2026-03-26T02:16:01Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/9bb825b7a5dfbd401421374bdfd76edcf720e290"
+        },
+        "date": 1775875031291,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 15352,
+            "unit": "kB",
+            "extra": "shim: 12408 kB\nzygote: 2944 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 66504,
+            "unit": "kB",
+            "extra": "shim: 53748 kB\nzygote: 12756 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 18660,
+            "unit": "kB",
+            "extra": "shim: 15180 kB\nzygote: 3480 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 19900,
+            "unit": "kB",
+            "extra": "shim: 16424 kB\nzygote: 3476 kB"
           }
         ]
       }
