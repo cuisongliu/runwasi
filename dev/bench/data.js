@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1776480348544,
+  "lastUpdate": 1776480439137,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -32178,6 +32178,76 @@ window.BENCHMARK_DATA = {
             "value": 20024,
             "unit": "kB",
             "extra": "shim: 16560 kB\nzygote: 3464 kB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jorge Prendes",
+            "username": "jprendes",
+            "email": "jorge.prendes@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "eac1a498ab9ad0cfec386e6f6b4ea321ee16984d",
+          "message": "update registry for apk-anywhere (#1107)\n\nSigned-off-by: Jorge Prendes <jorge.prendes@gmail.com>",
+          "timestamp": "2026-04-15T16:08:55Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/eac1a498ab9ad0cfec386e6f6b4ea321ee16984d"
+        },
+        "date": 1776480432726,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-app:latest",
+            "value": 354889868,
+            "range": "± 9290846",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-oci:latest",
+            "value": 282103395,
+            "range": "± 5985328",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-app:latest",
+            "value": 387908479,
+            "range": "± 4189284",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-oci:latest",
+            "value": 398688440,
+            "range": "± 4677990",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-app:latest",
+            "value": 343955356,
+            "range": "± 7187145",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-oci:latest",
+            "value": 354753351,
+            "range": "± 7636269",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-app:latest",
+            "value": 273668249,
+            "range": "± 5952744",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-oci:latest",
+            "value": 277232304,
+            "range": "± 4091310",
+            "unit": "ns/iter"
           }
         ]
       }
