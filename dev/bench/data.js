@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1777610382024,
+  "lastUpdate": 1777690844078,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -33756,6 +33756,52 @@ window.BENCHMARK_DATA = {
             "value": 302812098,
             "range": "± 6559768",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]",
+            "email": "49699333+dependabot[bot]@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "eb9967aae75bfc8ddf810590810f6962a8dc7c37",
+          "message": "chore(deps): bump dorny/paths-filter from 3 to 4 (#1090)\n\nBumps [dorny/paths-filter](https://github.com/dorny/paths-filter) from 3 to 4.\n- [Release notes](https://github.com/dorny/paths-filter/releases)\n- [Changelog](https://github.com/dorny/paths-filter/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/dorny/paths-filter/compare/v3...v4)\n\n---\nupdated-dependencies:\n- dependency-name: dorny/paths-filter\n  dependency-version: '4'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2026-04-21T13:18:25Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/eb9967aae75bfc8ddf810590810f6962a8dc7c37"
+        },
+        "date": 1777690834227,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 15052,
+            "unit": "kB",
+            "extra": "shim: 12168 kB\nzygote: 2884 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 65872,
+            "unit": "kB",
+            "extra": "shim: 53244 kB\nzygote: 12628 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 18908,
+            "unit": "kB",
+            "extra": "shim: 15304 kB\nzygote: 3604 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 20524,
+            "unit": "kB",
+            "extra": "shim: 16972 kB\nzygote: 3552 kB"
           }
         ]
       }
