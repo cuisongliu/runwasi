@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1778730366270,
+  "lastUpdate": 1778733559353,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -78080,6 +78080,100 @@ window.BENCHMARK_DATA = {
             "value": 15.265890854809903,
             "unit": "tasks/s",
             "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 1m 5s 505ms 512us 224ns"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jiaxiao Zhou",
+            "username": "Mossaka",
+            "email": "duibao55328@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "b2852bb114afb88d933c462e116556f7a9413985",
+          "message": "ci: unbreak Linux build matrix and benchmark-http (#1125)\n\n* ci: stop cross-rs install from falling back to a source build the pinned toolchain can't support\n\nWhen the GitHub releases API rate-limits the runner, cargo-binstall\nsilently falls back to `cargo install cross` without --locked. That\nre-resolves transitive deps to versions like `home@0.5.12` which require\nrustc 1.88, while rust-toolchain.toml pins 1.86.0, so the build aborts\nduring dependency resolution.\n\nTwo defences:\n\n* Pass --locked to cargo-binstall so the source-build fallback honours\n  cross's own Cargo.lock (MSRV-compatible).\n* Authenticate cargo-binstall to GitHub via GITHUB_TOKEN so the fast\n  path (prebuilt binary metadata lookup) keeps working under the\n  anonymous rate limit.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\n\n* ci: install hey from verified source tarball instead of broken S3 URL\n\nhttps://hey-release.s3.us-east-2.amazonaws.com/hey_linux_amd64 now\nreturns an S3 XML error body. The old step used `curl -LO` (no -f), so\nthe error body was written to disk, chmod +x'd, and moved to\n/usr/local/bin/hey -- then bash tried to interpret the XML and the\nbenchmark-http job died with `syntax error near unexpected token\nnewline` on every nightly run.\n\nrakyll/hey publishes no binary assets on its GitHub releases, so this\nswitches to building hey from its v0.1.4 source tarball, which:\n\n* uses `curl -fL` so a non-2xx response now aborts the step,\n* verifies the tarball against a pinned sha256 so a future tampered or\n  swapped archive fails loudly instead of being silently compiled, and\n* adds an `ELF .* executable` sanity check on the built binary so we\n  never install something that isn't actually a Linux executable.\n\nGo is preinstalled on the ubuntu-latest runners used by this workflow,\nso no extra setup step is required.\n\nCo-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>\n\n---------\n\nCo-authored-by: Claude Opus 4.7 <noreply@anthropic.com>",
+          "timestamp": "2026-05-13T18:46:35Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/b2852bb114afb88d933c462e116556f7a9413985"
+        },
+        "date": 1778733548980,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "Stress Test Throughput with containerd service - wamr (app)",
+            "value": 2.1431419373718614,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 7m 46s 604ms 652us 992ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmedge (app)",
+            "value": 2.752923293071501,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 6m 3s 250ms 222us 960ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmer (app)",
+            "value": 2.1733663461290456,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 7m 40s 115ms 710us 258ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmtime (app)",
+            "value": 3.702224992863613,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 4m 30s 107ms 841us 76ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wamr (oci)",
+            "value": 2.1060620666772887,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 7m 54s 819ms 814us 583ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmedge (oci)",
+            "value": 2.5695612237298477,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 6m 29s 171ms 501us 642ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmer (oci)",
+            "value": 2.128539224456254,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 7m 49s 805ms 765us 621ns"
+          },
+          {
+            "name": "Stress Test Throughput with containerd service - wasmtime (oci)",
+            "value": 4.526207796951892,
+            "unit": "tasks/s",
+            "extra": "Image: oci\nTasks: 1000\nParallel: 4\nDuration: 3m 40s 935ms 503us 817ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wamr (app)",
+            "value": 90.18151658282049,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 11s 88ms 746us 762ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wasmedge (app)",
+            "value": 80.05664419388096,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 12s 491ms 155us 607ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wasmer (app)",
+            "value": 16.707527614245414,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 59s 853ms 260us 344ns"
+          },
+          {
+            "name": "Stress Test Throughput with mock service - wasmtime (app)",
+            "value": 15.402373423807063,
+            "unit": "tasks/s",
+            "extra": "Image: app\nTasks: 1000\nParallel: 4\nDuration: 1m 4s 925ms 58us 787ns"
           }
         ]
       }
