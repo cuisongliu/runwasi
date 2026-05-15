@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1778817787021,
+  "lastUpdate": 1778817871217,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -35310,6 +35310,76 @@ window.BENCHMARK_DATA = {
             "value": 20024,
             "unit": "kB",
             "extra": "shim: 16548 kB\nzygote: 3476 kB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]",
+            "email": "49699333+dependabot[bot]@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "57418e4866de1a52d5b1b202528f63190be8abdc",
+          "message": "chore(deps): bump rand from 0.9.3 to 0.10.1 (#1126)\n\nBumps [rand](https://github.com/rust-random/rand) from 0.9.3 to 0.10.1.\n- [Release notes](https://github.com/rust-random/rand/releases)\n- [Changelog](https://github.com/rust-random/rand/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/rust-random/rand/compare/0.9.3...0.10.1)\n\n---\nupdated-dependencies:\n- dependency-name: rand\n  dependency-version: 0.10.1\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2026-05-14T20:12:49Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/57418e4866de1a52d5b1b202528f63190be8abdc"
+        },
+        "date": 1778817861128,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-app:latest",
+            "value": 365814046,
+            "range": "± 6977930",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-oci:latest",
+            "value": 283360485,
+            "range": "± 5986821",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-app:latest",
+            "value": 390154479,
+            "range": "± 4954465",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-oci:latest",
+            "value": 397201819,
+            "range": "± 6326377",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-app:latest",
+            "value": 349421530,
+            "range": "± 4178716",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-oci:latest",
+            "value": 358595757,
+            "range": "± 7721878",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-app:latest",
+            "value": 271635958,
+            "range": "± 8429915",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-oci:latest",
+            "value": 281258511,
+            "range": "± 9250007",
+            "unit": "ns/iter"
           }
         ]
       }
