@@ -3,6 +3,7 @@ use std::hash::Hash;
 use anyhow::Result;
 #[doc(inline)]
 pub use containerd_shimkit::sandbox::cli::Version;
+use oci_spec::runtime::Spec;
 
 use crate::sandbox::Sandbox;
 use crate::sandbox::context::WasmLayer;
@@ -29,6 +30,11 @@ pub trait Shim: Sync + 'static {
     /// to precompile layers.
     async fn compiler() -> Option<impl Compiler> {
         async move { NO_COMPILER }
+    }
+
+    /// Returns the compiler to be used by this engine with access to the OCI spec.
+    async fn compiler_with_spec(_spec: &Spec) -> Option<impl Compiler> {
+        Self::compiler()
     }
 
     /// Return the supported OCI layer types
