@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1779250237615,
+  "lastUpdate": 1779250239957,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -51364,6 +51364,33 @@ window.BENCHMARK_DATA = {
           {
             "name": "HTTP p95 Latency",
             "value": 4.2,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "James Sturtevant",
+            "username": "jsturtevant",
+            "email": "jsturtevant@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "1081edb4e00bfec3f73c0c0100e773a0677802d3",
+          "message": "Merge pull request #1135 from containerd/dependabot/cargo/openssl-0.10.80\n\nchore(deps): bump openssl from 0.10.79 to 0.10.80",
+          "timestamp": "2026-05-19T21:41:06Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/1081edb4e00bfec3f73c0c0100e773a0677802d3"
+        },
+        "date": 1779250239480,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "HTTP p95 Latency",
+            "value": 4.8999999999999995,
             "unit": "ms"
           }
         ]
