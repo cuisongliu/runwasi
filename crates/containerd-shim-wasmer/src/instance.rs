@@ -6,9 +6,8 @@ use containerd_shim_wasm::sandbox::context::{Entrypoint, RuntimeContext};
 use containerd_shim_wasm::shim::{Shim, Version, version};
 use tokio::runtime::Handle;
 use wasmer::{Module, Store};
-use wasmer_wasix::virtual_fs::{
-    FileSystem as VirtualFileSystem, host_fs::FileSystem as HostFileSystem,
-};
+use wasmer_wasix::virtual_fs::FileSystem as VirtualFileSystem;
+use wasmer_wasix::virtual_fs::host_fs::FileSystem as HostFileSystem;
 use wasmer_wasix::{WasiEnv, WasiError};
 
 pub struct WasmerShim;
