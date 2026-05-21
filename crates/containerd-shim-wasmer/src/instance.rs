@@ -62,6 +62,7 @@ impl Sandbox for WasmerSandbox {
             .args(&args[1..])
             .envs(envs)
             .fs(fs)
+            .engine(store.engine().clone())
             .preopen_dir("/")?
             .instantiate(module, &mut store)?;
 
