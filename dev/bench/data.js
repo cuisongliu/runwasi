@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1779250326409,
+  "lastUpdate": 1779337498578,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -43710,6 +43710,33 @@ window.BENCHMARK_DATA = {
           {
             "name": "HTTP RPS",
             "value": 18656.5543,
+            "unit": "req/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "James Sturtevant",
+            "username": "jsturtevant",
+            "email": "jsturtevant@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "ac26a95840e334b8f8335a1cc5dd496d58fc5cf5",
+          "message": "Merge pull request #1109 from TheRayquaza/feat/release-sha256sums\n\nrelease: include SHA256SUMS in github release assets",
+          "timestamp": "2026-05-20T14:22:20Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/ac26a95840e334b8f8335a1cc5dd496d58fc5cf5"
+        },
+        "date": 1779337486628,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "HTTP RPS",
+            "value": 18677.4771,
             "unit": "req/s"
           }
         ]
