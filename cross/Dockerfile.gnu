@@ -17,6 +17,7 @@ RUN native_arch="$(dpkg --print-architecture)" && \
     apt-get install -y --no-install-recommends \
       build-essential \
       ca-certificates \
+      cmake \
       curl \
       gfortran \
       libclang-dev \
