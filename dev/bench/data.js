@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1779682768507,
+  "lastUpdate": 1779682919070,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -36470,6 +36470,76 @@ window.BENCHMARK_DATA = {
             "value": 20572,
             "unit": "kB",
             "extra": "shim: 16988 kB\nzygote: 3584 kB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Mateo Lelong",
+            "username": "TheRayquaza",
+            "email": "77465848+TheRayquaza@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "be1ca93e8fb155a2c3beb68c396f1ffd2a87bad8",
+          "message": "feat: shimkit: implement info flag (#1120)\n\nSigned-off-by: Mateo Lelong <mateo.lelong@datadoghq.com>",
+          "timestamp": "2026-05-21T16:07:33Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/be1ca93e8fb155a2c3beb68c396f1ffd2a87bad8"
+        },
+        "date": 1779682906051,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-app:latest",
+            "value": 116626115,
+            "range": "± 1725389",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-oci:latest",
+            "value": 67333954,
+            "range": "± 1413238",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-app:latest",
+            "value": 95003106,
+            "range": "± 1834211",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-oci:latest",
+            "value": 102406812,
+            "range": "± 2449170",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-app:latest",
+            "value": 110558609,
+            "range": "± 1358000",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-oci:latest",
+            "value": 117927892,
+            "range": "± 2394248",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-app:latest",
+            "value": 64669554,
+            "range": "± 935739",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-oci:latest",
+            "value": 72407791,
+            "range": "± 1105974",
+            "unit": "ns/iter"
           }
         ]
       }
