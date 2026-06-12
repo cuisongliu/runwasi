@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1781239567093,
+  "lastUpdate": 1781239703698,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -38558,6 +38558,76 @@ window.BENCHMARK_DATA = {
             "value": 20392,
             "unit": "kB",
             "extra": "shim: 16392 kB\nzygote: 4000 kB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jorge Prendes",
+            "username": "jprendes",
+            "email": "jorge.prendes@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "d9154c263427ae6c462ba82c21d944b2d1cd58e8",
+          "message": "chore: bump crates patch versions (#1154)\n\nSigned-off-by: Jorge Prendes <jorge.prendes@gmail.com>",
+          "timestamp": "2026-06-11T00:08:00Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/d9154c263427ae6c462ba82c21d944b2d1cd58e8"
+        },
+        "date": 1781239691690,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-app:latest",
+            "value": 133729110,
+            "range": "± 1672397",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-oci:latest",
+            "value": 78439716,
+            "range": "± 4119605",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-app:latest",
+            "value": 110034481,
+            "range": "± 3076602",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-oci:latest",
+            "value": 114712853,
+            "range": "± 1359452",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-app:latest",
+            "value": 131565362,
+            "range": "± 2236428",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-oci:latest",
+            "value": 140013552,
+            "range": "± 2452893",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-app:latest",
+            "value": 76487093,
+            "range": "± 2271771",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-oci:latest",
+            "value": 81817719,
+            "range": "± 1101383",
+            "unit": "ns/iter"
           }
         ]
       }
