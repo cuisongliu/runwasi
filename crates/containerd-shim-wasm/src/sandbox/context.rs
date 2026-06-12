@@ -52,6 +52,7 @@ pub enum Source<'a> {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct WasmLayer {
     pub config: Descriptor,
+    pub precompiled: bool,
     #[serde(with = "serde_bytes")]
     pub layer: Vec<u8>,
 }
@@ -68,6 +69,16 @@ impl<'a> Source<'a> {
                 Ok(Cow::Owned(std::fs::read(path)?))
             }
             Source::Oci([module]) => Ok(Cow::Borrowed(&module.layer)),
+            Source::Oci(_modules) => {
+                bail!("only a single module is supported when using images with OCI layers")
+            }
+        }
+    }
+
+    pub fn is_precompiled(&self) -> anyhow::Result<bool> {
+        match self {
+            Source::File(_) => Ok(false),
+            Source::Oci([module]) => Ok(module.precompiled),
             Source::Oci(_modules) => {
                 bail!("only a single module is supported when using images with OCI layers")
             }
@@ -393,6 +404,7 @@ mod tests {
                     10,
                     Digest::try_from(format!("sha256:{:064?}", 0))?,
                 ),
+                precompiled: false,
             }],
         };
 

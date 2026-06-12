@@ -522,6 +522,7 @@ impl Client {
                 layers_for_runtime.push(WasmLayer {
                     config: original_config.clone(),
                     layer: compiled_layer.clone(),
+                    precompiled: true,
                 });
 
                 let _ = precompiled_content.lease.release().await;
@@ -555,6 +556,7 @@ impl Client {
         self.read_content(digest).await.map(|module| WasmLayer {
             config: config.clone(),
             layer: module,
+            precompiled: true,
         })
     }
 
@@ -568,6 +570,7 @@ impl Client {
         self.read_content(digest).await.map(|module| WasmLayer {
             config: config.clone(),
             layer: module,
+            precompiled: false,
         })
     }
 }

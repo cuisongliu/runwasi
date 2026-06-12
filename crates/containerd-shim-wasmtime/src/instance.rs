@@ -160,8 +160,11 @@ impl Sandbox for WasmtimeSandbox {
         } = ctx.entrypoint();
 
         let wasm_bytes = &source.as_bytes()?;
+        let precompiled = source.is_precompiled()?;
 
-        self.execute(ctx, wasm_bytes, func).await.into_error_code()
+        self.execute(ctx, wasm_bytes, precompiled, func)
+            .await
+            .into_error_code()
     }
 }
 
@@ -174,10 +177,15 @@ impl Compiler for WasmtimeCompiler {
         let mut compiled_layers = Vec::<Option<Vec<u8>>>::with_capacity(layers.len());
 
         for layer in layers {
-            if wasmtime::Engine::detect_precompiled(&layer.layer).is_some() {
-                log::info!("Already precompiled");
-                compiled_layers.push(None);
-                continue;
+            if layer.precompiled {
+                if wasmtime::Engine::detect_precompiled(&layer.layer).is_some() {
+                    log::info!("Already precompiled");
+                    compiled_layers.push(None);
+                    continue;
+                }
+                bail!(
+                    "A layer is marked as precompiled but does not appear to be a valid precompiled module/component"
+                );
             }
 
             let compiled_layer = match WasmBinaryType::from_bytes(&layer.layer) {
@@ -343,19 +351,11 @@ impl WasmtimeSandbox {
         &self,
         ctx: &impl RuntimeContext,
         wasm_binary: &[u8],
+        precompiled: bool,
         func: String,
     ) -> Result<i32> {
-        match WasmBinaryType::from_bytes(wasm_binary) {
-            Some(WasmBinaryType::Module) => {
-                log::debug!("loading wasm module");
-                let module = Module::from_binary(&self.engine, wasm_binary)?;
-                self.execute_module(ctx, module, &func).await
-            }
-            Some(WasmBinaryType::Component) => {
-                let component = Component::from_binary(&self.engine, wasm_binary)?;
-                self.execute_component(ctx, component, func).await
-            }
-            None => match wasmtime::Engine::detect_precompiled(wasm_binary) {
+        if precompiled {
+            match wasmtime::Engine::detect_precompiled(wasm_binary) {
                 Some(Precompiled::Module) => {
                     log::info!("using precompiled module");
                     let module = unsafe { Module::deserialize(&self.engine, wasm_binary) }?;
@@ -369,7 +369,22 @@ impl WasmtimeSandbox {
                 None => {
                     bail!("invalid precompiled module")
                 }
-            },
+            }
+        } else {
+            match WasmBinaryType::from_bytes(wasm_binary) {
+                Some(WasmBinaryType::Module) => {
+                    log::debug!("loading wasm module");
+                    let module = Module::from_binary(&self.engine, wasm_binary)?;
+                    self.execute_module(ctx, module, &func).await
+                }
+                Some(WasmBinaryType::Component) => {
+                    let component = Component::from_binary(&self.engine, wasm_binary)?;
+                    self.execute_component(ctx, component, func).await
+                }
+                None => {
+                    bail!("invalid wasm module")
+                }
+            }
         }
     }
 }
