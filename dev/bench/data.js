@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1781323713939,
+  "lastUpdate": 1781323813694,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -38674,6 +38674,76 @@ window.BENCHMARK_DATA = {
             "value": 20164,
             "unit": "kB",
             "extra": "shim: 16328 kB\nzygote: 3836 kB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jorge Prendes",
+            "username": "jprendes",
+            "email": "jorge.prendes@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "5a8fc8e9ee0df28b0485da7419ee74c72127dfba",
+          "message": "Add an extra space in zygote version to fix CI version check (#1155)\n\nSigned-off-by: Jorge Prendes <jorge.prendes@gmail.com>",
+          "timestamp": "2026-06-12T15:44:58Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/5a8fc8e9ee0df28b0485da7419ee74c72127dfba"
+        },
+        "date": 1781323804642,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-app:latest",
+            "value": 130985749,
+            "range": "± 1590633",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmtime/wasi-demo-oci:latest",
+            "value": 79661852,
+            "range": "± 2355777",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-app:latest",
+            "value": 115078245,
+            "range": "± 1975047",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmedge/wasi-demo-oci:latest",
+            "value": 126699550,
+            "range": "± 19703494",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-app:latest",
+            "value": 131307906,
+            "range": "± 4203751",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wasmer/wasi-demo-oci:latest",
+            "value": 140880940,
+            "range": "± 2378340",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-app:latest",
+            "value": 75439816,
+            "range": "± 1975802",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "end-to-end/wamr/wasi-demo-oci:latest",
+            "value": 85003806,
+            "range": "± 1687368",
+            "unit": "ns/iter"
           }
         ]
       }
