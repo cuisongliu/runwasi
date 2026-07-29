@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1785210215318,
+  "lastUpdate": 1785293616525,
   "repoUrl": "https://github.com/cuisongliu/runwasi",
   "entries": {
     "Criterion.rs Benchmark": [
@@ -43894,6 +43894,52 @@ window.BENCHMARK_DATA = {
             "value": 86144333,
             "range": "± 2882985",
             "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "James Sturtevant",
+            "username": "jsturtevant",
+            "email": "jsturtevant@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "f1401719a3e981956ced9cd685abb2a49190bd1c",
+          "message": "Merge pull request #1153 from containerd/dependabot/cargo/patch-e21a0282c3\n\nchore(deps): bump the patch group across 1 directory with 3 updates",
+          "timestamp": "2026-06-13T00:38:57Z",
+          "url": "https://github.com/cuisongliu/runwasi/commit/f1401719a3e981956ced9cd685abb2a49190bd1c"
+        },
+        "date": 1785293594484,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "wamr/memory-usage",
+            "value": 15832,
+            "unit": "kB",
+            "extra": "shim: 12496 kB\nzygote: 3336 kB"
+          },
+          {
+            "name": "wasmedge/memory-usage",
+            "value": 75264,
+            "unit": "kB",
+            "extra": "shim: 62424 kB\nzygote: 12840 kB"
+          },
+          {
+            "name": "wasmer/memory-usage",
+            "value": 20120,
+            "unit": "kB",
+            "extra": "shim: 15968 kB\nzygote: 4152 kB"
+          },
+          {
+            "name": "wasmtime/memory-usage",
+            "value": 20560,
+            "unit": "kB",
+            "extra": "shim: 16604 kB\nzygote: 3956 kB"
           }
         ]
       }
